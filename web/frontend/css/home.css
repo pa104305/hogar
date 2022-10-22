@@ -1,0 +1,81 @@
+/* !NO COLOCAR AQUI EL COLOR DE FONDO YA QUE LO APLICA A TODO
+!LOS ELEMENTOS QUE NO TENGAN FONDO DECLARADO */
+*{
+    padding: 0%;
+    margin: 0%;
+    color: whitesmoke;
+}
+/* *Aquise aplica el color de fondo para que solo se aplique al cuerpo */
+body{
+    background: #242424;
+}
+/* *Elementos del menu */
+header{
+    width: 97.05%;
+    background: #787878;
+    padding: 20px;
+}
+nav{
+    width: 20%;
+    position: absolute;
+    right: 10%;
+    top: 1.5%;
+}
+nav > li{
+    display: inline-block;
+    padding: 20px 30px;
+}
+nav > li:hover{
+    background: #909090;
+}
+/* *Estilo del cuerpo de la página */
+section{
+    position: absolute;
+    right: 12%;
+    top: 25%;
+}
+section > img{
+    position: absolute;
+    right: 140%;
+    top: -10%;
+}
+/* *Pie de página */
+footer{
+    background: #787878;
+    width: 97.05%;
+    padding: 20px;
+    position: absolute;
+    bottom: 0%;
+}
+/* *Modificación para el espacio donde se muestra la información*/
+aside{
+    border: 1px solid black;
+    width: 1200px;
+    height: 430px;
+    position: absolute;
+    left: 2%;
+    top: 20%;
+}
+/* *Modificación para el espacio de los input*/
+article{
+    position: absolute;
+    top: 15%;
+    left: 4%;
+}
+article > input{
+    width: 200px;
+    background: #242424;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+article > button{
+    width: 50px;
+    height: 18px;
+    background: #242424;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+article > button:hover{
+    background: white;
+    color: #242424;
+}
