@@ -1,0 +1,128 @@
+/* !NO COLOCAR AQUI EL COLOR DE FONDO YA QUE LO APLICA A TODO
+!LOS ELEMENTOS QUE NO TENGAN FONDO DECLARADO */
+*{
+    padding: 0%;
+    margin: 0%;
+    color: whitesmoke;
+}
+/* *Aquise aplica el color de fondo para que solo se aplique al cuerpo */
+body{
+    background: #242424;
+}
+/* *Elementos del menu */
+header{
+    width: 97.05%;
+    background: #787878;
+    padding: 20px;
+}
+nav{
+    width: 20%;
+    position: absolute;
+    right: 10%;
+    top: 1.5%;
+}
+nav > li{
+    display: inline-block;
+    padding: 20px 30px;
+}
+nav > li:hover{
+    background: #909090;
+}
+/* *Estilo del cuerpo de la página */
+section{
+    position: absolute;
+    right: 12%;
+    top: 25%;
+}
+section > img{
+    position: absolute;
+    right: 140%;
+    top: -10%;
+}
+/* *Pie de página */
+footer{
+    background: #787878;
+    width: 97.05%;
+    padding: 20px;
+    position: absolute;
+    bottom: 0%;
+}
+/* *Modificación para el espacio donde se muestra la información*/
+aside{
+    border: 1px solid black;
+    width: 1200px;
+    height: 430px;
+    position: relative;
+    left: 15px;
+    top: 60px;
+}
+/* *Modificación para el espacio de los input*/
+article{
+    position: absolute;
+    top: 15%;
+    left: 4%;
+}
+article > input{
+    width: 200px;
+    background: #242424;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+article > button{
+    width: 50px;
+    height: 18px;
+    background: #242424;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+article > button:hover{
+    background: white;
+    color: #242424;
+}
+/* *Agregar estilo a la tabla creada con JS */
+#space > tr{
+    display: flex;
+    justify-content: space-between;
+    /*border: 1px solid #787878;*/
+}
+#space > tr:hover td{
+    background: #787878;
+    transform: scale(1.1);
+    text-align: center;
+}
+#space > tr > td{
+    width: 25%;
+    text-align: left;
+    border: 1px solid #787878;
+}
+#space{
+    overflow: scroll;
+}
+#space > tr > th{
+    border: 1px solid white;
+    width: 25%;
+}
+/* *Estilos del html variable */
+#options{
+    margin-left: 25px;
+}
+#options > input{
+    width: 150px;
+    background: #242424;
+    border: 1px solid white;
+    border-radius: 2px;
+}
+#options > button{
+    width: 50px;
+    height: 18px;
+    background: #242424;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+#options > button:hover{
+    background: white;
+    color: #242424;
+}
+#info{
+    padding: 20px 30px;
+}
