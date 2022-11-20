@@ -52,9 +52,9 @@ aside{
     border: 1px solid black;
     width: 1200px;
     height: 430px;
-    position: absolute;
-    left: 2%;
-    top: 20%;
+    position: relative;
+    left: 15px;
+    top: 60px;
 }
 /* *Modificación para el espacio de los input*/
 article{
@@ -78,4 +78,51 @@ article > button{
 article > button:hover{
     background: white;
     color: #242424;
+}
+/* *Agregar estilo a la tabla creada con JS */
+#space > tr{
+    display: flex;
+    justify-content: space-between;
+    /*border: 1px solid #787878;*/
+}
+#space > tr:hover td{
+    background: #787878;
+    transform: scale(1.1);
+    text-align: center;
+}
+#space > tr > td{
+    width: 25%;
+    text-align: left;
+    border: 1px solid #787878;
+}
+#space{
+    overflow: scroll;
+}
+#space > tr > th{
+    border: 1px solid white;
+    width: 25%;
+}
+/* *Estilos del html variable */
+#options{
+    margin-left: 25px;
+}
+#options > input{
+    width: 150px;
+    background: #242424;
+    border: 1px solid white;
+    border-radius: 2px;
+}
+#options > button{
+    width: 50px;
+    height: 18px;
+    background: #242424;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+#options > button:hover{
+    background: white;
+    color: #242424;
+}
+#info{
+    padding: 20px 30px;
 }
