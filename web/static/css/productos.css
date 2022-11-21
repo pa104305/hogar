@@ -1,0 +1,204 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background: #242424;
+}
+
+@media screen and (max-width: 850px){
+    .header{
+        width: 100%;
+        height: 14vh;
+        background: grey;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .header > h1{
+        margin: 10px 15px;
+        color: #121212;
+    }
+    .header > nav > ul{
+        list-style: none;
+        display: flex;
+    }
+    .header > nav > ul > a{
+        padding: 10px 20px;
+        text-decoration: none;
+        color: white;
+    }
+    section{
+        width: 100vw;
+        height: 76vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    section > article{
+        margin-top: 4vh;
+        display: flex;
+        flex-direction: column;
+    }
+    section > article > input{
+        width: 50vw;
+        background: #ddd;
+        border-radius: 15px;
+        text-align: center;
+    }
+    section > article > button{
+        width: 30vw;
+        margin-top: 2vh;
+        margin-left: 10vw;
+        background: darkolivegreen;
+        border-radius: 10px;
+    }
+    section > .aside{
+        margin-top: 6vh;
+        height: 40vh;
+        border: 1px solid black;
+        overflow: scroll;
+        scroll-behavior: auto;
+        color: white;
+    }
+    section > .aside > aside > tr > th{
+        border: 1px solid black;
+    }
+    section > .aside > aside > tr > td{
+        padding: 10px;
+        border: 1px solid black;
+    }
+    section > .aside > aside > tr > td > a{
+        color: white;
+        text-decoration: none;
+    }
+    .container{
+        width: 100%;
+        height: 10vh;
+        background: grey;
+        position: absolute;
+        bottom: 0%;
+    }
+    .container > h3{
+        text-align: center;
+        position: relative;
+        bottom: -40px;
+    }
+}
+
+@media screen and (min-width:851px){    
+    .header{
+        display: flex;
+        width: 100vw;
+        height: 10vh;
+        background: grey;
+    }
+    .header > h1{
+        width: 50vw;
+        margin-left: 5vw;
+        position: relative;
+    }
+    .header > nav > ul{
+        list-style: none;
+        width: 45vw;
+        display: flex;
+        justify-items: right;
+    }
+    .header > nav > ul > a{
+        width: 18vw;
+        height: 10vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none;
+    }
+    .header > nav > ul > a:hover{
+        background: #454545;
+    }
+    .header > nav > ul > a > li {
+        position: relative;
+        top: 4vh;
+        color: white;
+    }
+    section{
+        height: 80vh;
+    }
+    section > article{
+        height: 20vh;
+        display: flex;
+        align-items: center;
+    }
+    section > article > input{
+        width: 15vw;
+        height: 2.5vh;
+        text-align: center;
+        margin-left: 4vw;
+        margin-right: 2vw;
+        border-radius: 10px;
+        border: 0.5px solid white;
+    }
+    section > article > button{
+        width: 5vw;
+        height: 2.5vh;
+        background: darkolivegreen;
+        border-radius: 8px;
+        border: 0.5px solid darkolivegreen;
+        cursor: pointer;
+    }
+    section > .aside{
+        width: 100vw;
+        height: 60vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    section > .aside > aside{
+        height: 50vh;
+        width: 81vw;
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+        border: 1px solid black;
+    }
+    section > .aside > aside > tr > th{
+        width: 20vw;
+        border: 1px solid black;
+        background: #343434;
+        color: white;
+    }
+    section > .aside > aside > tr > td{
+        width: 20vw;
+        background: #444;
+        border: 1px solid black;
+        color: white;
+    }
+    #box{width: 100%}
+    section > .aside > aside > tr > td > a{
+        color: white;
+        text-decoration: none;
+    }
+    section > .aside > aside > tr:hover td{
+        background: #747474;
+        transform: scale(1.2);
+    }
+    footer{
+        width: 100vw;
+        height: 10vh;
+        background: grey;
+    }
+    footer > .container{
+        display: flex;
+        height: 9vh;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    footer > .container > h3{
+        width: 25vw;
+        font-size: 18px;
+        text-align: center;
+    }
+}

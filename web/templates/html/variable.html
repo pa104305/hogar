@@ -4,17 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="static/css/home.css">
+    <link rel="stylesheet" href="static/css/variable.css">
     <title></title>
 </head>
 <body>
-    <header>
+    <header class="header">
         <h1>Copias PIT</h1>
+        <nav>
+            <ul>
+                <a href="/principal"><li>Principal</li></a>
+                <a href="/venta"><li>Ventas</li></a>
+                <a href="/compras"><li>Compras</li></a>
+            </ul>
+        </nav>
     </header>
-    <nav>
-        <li><a href="/venta">Ventas</a></li>
-        <li><a href="/compras">Compras</a></li>
-    </nav>
     <div id="modify">
         <div id="info">
             <h2></h2><br>
@@ -24,12 +27,14 @@
         </div>
         <div id="options">
             <input type="number">
-            <button>Vender</button>
-            <button>Surtir</button>
+            <div id="buttons">
+                <button>Vender</button>
+                <button>Surtir</button>
+            </div>
         </div>
     </div>
     <footer>
-        <h3>@Derechos Reservados</h3>
+        <div class="container"><h3>@Derechos Reservados</h3></div>
     </footer>
 </body>
 <script src="static/js/variable.js"></script>

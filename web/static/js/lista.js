@@ -12,7 +12,7 @@ function comprobate_stock(){
         table.setAttribute("id", "line")
         table.innerHTML += `
             <th id="item-id">${stockVar[0]}</th>
-            <td id="item">${stockVar[1]}</td>
+            <td id="item"><a href="/${stockVar[1]}"><div id="box">${stockVar[1]}</div></a></td>
             <td id="item">${stockVar[2]}</td>
             <td id="item">${stockVar[3]}</td>
         `;
