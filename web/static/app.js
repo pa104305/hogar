@@ -14,29 +14,19 @@ function log(){//funcion a la que se llama desde html cuando se hace click en el
     //lineas para comprobar que los datos que solicitan las variables funcionan correctamente
 }
 
-function comprobar_usuario(nombre, usuario_db){
-    if(nombre === usuario_db){
+function comprobar_usuario(datos, inputUser, inputPass){
+    if(datos[1] === inputUser && datos[2] === inputPass){
         console.log("Usuario encontrado");
-        //Llamar funcion para comprobar contraseña
-    }else if(nombre != usuario_db){
-        console.log("Buscando usuario")
-    }else{
-        //alert("Credenciales incorrectas");
-        console.log("usuario no encontrado");
-    }
-}
-
-function comprobar_contraseña(contraseña, password_db){
-    if(contraseña === password_db){
         alert("Acceso concedido")
         window.open('/principal', "_self");
-    }else if(contraseña != password_db){
-        console.log("intentando acceder")
+    }else{
         intentos += 1;
-        if(intentos == 4){
-            alert("Acceso denegado")
-            location.reload()
-        }
+    }
+    console.log(intentos)
+    if(intentos == 4){
+        console.log("usuario no encontrado" + intentos);
+        alert("Acceso denegado")
+        location.reload()
     }
 }
 
@@ -47,9 +37,12 @@ function usuarios_db(nombre, contraseña){
     .then(data => {
         data.forEach(date => {
             info = date
-            comprobar_usuario(nombre, date[1])
-            comprobar_contraseña(contraseña, date[2])
-            //console.log(info)
+            comprobar_usuario(date, nombre, contraseña)
+            //comprobar_contraseña(contraseña, date[2])
         });
     })
+}
+
+function log_out(){
+    window.open('/', "_self");
 }
