@@ -1,7 +1,7 @@
 *{
-    box-sizing: border-box;
-    margin: 0;
     padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 html{
     scroll-behavior: smooth;
@@ -9,7 +9,7 @@ html{
 body{
     background: #242424;
 }
-@media screen and (max-width: 850px){
+@media screen and (max-width:850px){
     .header{
         width: 100%;
         height: 14vh;
@@ -31,28 +31,47 @@ body{
         text-decoration: none;
         color: white;
     }
-    .info{
+    #modify{
+        width: 100vw;
+        height: 76vh;
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-top: 10%;
-        color: #ccc;
     }
-    .info > h1{
-        margin-bottom: 30px;
-    }
-    .info > ol{
-        /*margin: 40px 70px;*/
-        margin-bottom: 30px;
-        margin-left: 70px;
-        display: flex;
-        flex-direction: column;
-    }
-    .image-container{
+    #modify > #info{
+        width: 100vw;
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-bottom: 22px;
+        margin-bottom: 4vh;
+    }
+    #modify > #info > h2{
+        margin-top: 4vh;
+        color: white;
+    }
+    #modify > #info > h3{
+        width: 50vw;
+        text-align: left;
+        color: white;
+    }
+    #modify > #options{
+        width: 75vw;
+        height: 20vh;
+    }
+    #modify > #options > input{
+        width: 50vw;
+        height: 2.5vh;
+        margin-left: 12.5vw;
+        margin-top: 4vh;
+    }
+    #modify > #options > #buttons > button{
+        width: 30vw;
+        height: 2.5vh;
+        margin-left: 5vw;
+        margin-top: 2vh;
+        border-radius: 10px;
+        border: 0.5px solid darkolivegreen;
+        background: darkolivegreen;
     }
     .container{
         width: 100%;
@@ -67,8 +86,7 @@ body{
         bottom: -40px;
     }
 }
-
-@media screen and (min-width: 851px){
+@media screen and (min-width:851px){
     .header{
         display: flex;
         width: 100vw;
@@ -100,40 +118,50 @@ body{
     .header > nav > ul > a > li {
         position: relative;
         top: 4vh;
+        color: white;
     }
-    section{
+    #modify{
+        height: 80vh;
         width: 100vw;
+        display: flex;
+    }
+    #modify > #info{
+        width: 50vw;
         height: 80vh;
         display: flex;
+        flex-direction: column;
     }
-    section > .info{
+    #modify > #info > h2{
+        text-align: center;
+        margin-top: 6vh;
+        margin-left: 20vw;
+        color: white;
+    }
+    #modify > #info > h3{
+        text-align: left;
+        margin-left: 25vw;
+        padding: 0.5vh 0.5vw;
+        color: white;
+    }
+    #modify > #options{
         width: 50vw;
+        height: 80vh;
         display: flex;
         flex-direction: column;
-        color: #ccc;
-        align-items: center;
     }
-    section > .info > h1{
-        margin-top: 5vh;
-        height: 10vh;
-        text-align: center;
+    #modify > #options > input, #buttons{
+        height: 2.5vh;
+        margin-left: 2vw;
     }
-    section > .info > ol{
-        height: 40vh;
-        width: 35vw;
-        padding-left: 80px;
+    #modify > #options > input{
+        width: 15vw;
+        margin-top: 15vh;
+        margin-left: 4.25vw;
     }
-    section > .image-container{
-        width: 50vw;
-        display: flex;
-        align-items: center;
-    }
-    section > .image-container > img{
-        width: 500px;
-        height: 300px;
-        position: relative;
-        left: 15%;
-        top: -10%;
+    #modify > #options > #buttons > button{
+        width: 8vw;
+        margin-top: 2vh;
+        margin-left: 1vw;
     }
     footer{
         width: 100vw;
@@ -148,7 +176,7 @@ body{
     }
     footer > .container > h3{
         width: 25vw;
-        font-size: 18px;
-        text-align: center;
-    }
+    font-size: 18px;
+    text-align: center;
+}
 }

@@ -20,11 +20,15 @@ function productSearch(product){
             const table = document.createElement('tr');
             table.setAttribute("id", "line")
             table.innerHTML += `
-            <th id="item-id">${stockVar[i][0]}</th>
-            <td id="item">${stockVar[i][1]}</td>
-            <td id="item">${stockVar[i][2]}</td>
-            <td id="item">${stockVar[i][3]}</td>
+                <th id="item-id">${stockVar[i][0]}</th>
+                <td id="item"><a href="/${stockVar[i][1]}"><div id="box">${stockVar[i][1]}</div></a></td>
+                <td id="item">${stockVar[i][2]}</td>
+                <td id="item">${stockVar[i][3]}</td>
         `;
+        //<th id="item-id">${stockVar[i][0]}</th>
+        //<td id="item">${stockVar[i][1]}</td>
+        //<td id="item">${stockVar[i][2]}</td>
+        //<td id="item">${stockVar[i][3]}</td>
         space.appendChild(table)
         }
     }
@@ -78,7 +82,7 @@ fetch('static/json/stock.json')
             table.setAttribute("id", "line")
             table.innerHTML += `
                 <th id="item-id">${product[0]}</th>
-                <td id="item"><a href="/${product[1]}">${product[1]}</a></td>
+                <td id="item"><a href="/${product[1]}"><div id="box">${product[1]}</div></a></td>
                 <td id="item">${product[2]}</td>
                 <td id="item">${product[3]}</td>
             `;

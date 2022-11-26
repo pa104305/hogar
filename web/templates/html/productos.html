@@ -5,26 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ventas</title>
-    <link rel="stylesheet" href="static/css/home.css">
-    <link rel="stylesheet" href="static/css/excp.css">
+    <link rel="stylesheet" href="static/css/productos.css">
 </head>
 <body link="black" vlink="black">
-    <header>
+    <header class="header">
         <h1>Copias PIT</h1>
+        <nav>
+            <ul>
+                <a href="/principal"><li>Principal</li></a>
+                <a href="/compras"><li>Compras</li></a>
+            </ul>
+        </nav>
     </header>
-    <nav>
-        <li><a href="/principal">Principal</a></li>
-        <li><a href="/compras">Compras</a></li>
-    </nav>
-    <article>
-        <input type="search" placeholder="Nombre del producto" id="productName">
-        <button onclick="products()">Buscar</button>
-    </article>
-    <aside id="space">
-        <!--Introducir busqueda del producto (nombre, precio, existencia e id)-->
-    </aside>
+    <section>
+        <article>
+            <input type="search" placeholder="Nombre del producto" id="productName">
+            <button onclick="products()">Buscar</button>
+        </article>
+        <div class="aside">
+            <aside id="space">
+                <!--Introducir busqueda del producto (nombre, precio, existencia e id)-->
+            </aside>
+        </div>
+    </section>
     <footer>
-        <h3>@Derechos Reservados 2022</h3>
+        <div class="container"><h3>&copy; Derechos Reservados 2022</h3></div>
     </footer>
 </body>
 <script src="static/js/ventas.js"></script>
