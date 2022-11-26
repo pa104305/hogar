@@ -1,35 +1,48 @@
+*{
+    box-sizing: border-box;
+}
 body{
     background: #404040;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 20vh;
 }
 .cuadro{
-    background: #fff;
-    border-radius: 20px;
-    padding: 15px;
-    width: 300px;
-    height: 500px;
-    position: absolute;
-    left: 36%;
-    top: 7%;
+    width: 350px;
+    height: 400px;
+    background-color: white;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.titulo{
-    position: relative;
-    top: 20px;
-    left: 100px;
+.cuadro > .campos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.campos > input{
-    margin: 10px;
+.cuadro > .campos{
+    margin-top: 50px;
+}
+.cuadro > .campos > button{
+    height: 30px;
+    background: darkgreen;
+    border-radius: 10px;
+    margin-top: 30px;
+    border: 00.5px solid darkgreen;
+}
+.cuadro > .campos > button:hover{
+    height: 30px;
+    background: green;
+    border-radius: 10px;
+}
+.cuadro > .campos > input{
+    margin-bottom: 25px;
+    height: 25px;
+    text-align: center;
+}
+.campos > input, button{
     width: 200px;
-    height: 25px;
-    position: relative;
-    top: 60px;
-    left: 30px;
-}
-.campos > button{
-    width: 175px;
-    height: 25px;
-    position: relative;
-    top: 90px;
-    left: 62.5px;
-    background-color: green;
-    border-radius: 5px;
 }

@@ -18,28 +18,26 @@ def saludo(name=None):
 @app.route('/principal')
 def inicio():
     url_for('static', filename='css/home.css')
-    url_for('static', filename='css/expc.css')
     return render_template('html/home.html')
 
 @app.route('/compras')
 def compras():
     data_stock()
     url_for('static', filename='js/lista.js')
-    url_for('static', filename='css/home.css')
-    url_for('static', filename='css/expc.css')
+    url_for('static', filename='css/lista.css')
     return render_template('html/lista.html')
 
 @app.route('/venta')
 def venta():
     data_stock()
-    url_for('static', filename='css/home.css')
-    url_for('static', filename='css/expc.css')
+    url_for('static', filename='css/productos.css')
     url_for('static', filename='js/ventas.js')
     return render_template('html/productos.html')
 
 @app.route('/<product_name>')
 def variable(product_name):
     product(product_name)
+    url_for('static', filename='css/variable.css')
     return render_template('html/variable.html')
 
 if __name__ == '__main__':

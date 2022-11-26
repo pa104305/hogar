@@ -1,7 +1,7 @@
 *{
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 html{
     scroll-behavior: smooth;
@@ -9,7 +9,8 @@ html{
 body{
     background: #242424;
 }
-@media screen and (max-width: 850px){
+/**/
+@media screen and (max-width:850px){
     .header{
         width: 100%;
         height: 14vh;
@@ -31,28 +32,28 @@ body{
         text-decoration: none;
         color: white;
     }
-    .info{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 10%;
-        color: #ccc;
+    .center{
+        height: 76vh;
     }
-    .info > h1{
-        margin-bottom: 30px;
+    .center > aside{
+        border: 1px solid black;
+        height: 60vh;
+        width: 90vw;
+        position: relative;
+        left: 5vw;
+        top: 8vh;
+        overflow-x: hidden;
+        overflow-y: scroll;
     }
-    .info > ol{
-        /*margin: 40px 70px;*/
-        margin-bottom: 30px;
-        margin-left: 70px;
-        display: flex;
-        flex-direction: column;
+    .center > aside > tr > th, td{
+        width: 90vw;
+        color: white;
+        border: 1px solid black;
     }
-    .image-container{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 22px;
+    .center > aside > tr > td > a{
+        width: 100%;
+        color: white;
+        text-decoration: none;
     }
     .container{
         width: 100%;
@@ -67,8 +68,7 @@ body{
         bottom: -40px;
     }
 }
-
-@media screen and (min-width: 851px){
+@media screen and (min-width:851px){
     .header{
         display: flex;
         width: 100vw;
@@ -100,40 +100,38 @@ body{
     .header > nav > ul > a > li {
         position: relative;
         top: 4vh;
+        color: white;
     }
-    section{
-        width: 100vw;
+    .center{
         height: 80vh;
-        display: flex;
+        width: 100vw;
     }
-    section > .info{
-        width: 50vw;
-        display: flex;
-        flex-direction: column;
-        color: #ccc;
-        align-items: center;
-    }
-    section > .info > h1{
-        margin-top: 5vh;
-        height: 10vh;
-        text-align: center;
-    }
-    section > .info > ol{
-        height: 40vh;
-        width: 35vw;
-        padding-left: 80px;
-    }
-    section > .image-container{
-        width: 50vw;
-        display: flex;
-        align-items: center;
-    }
-    section > .image-container > img{
-        width: 500px;
-        height: 300px;
+    .center > aside{
+        height: 60vh;
+        width: 80vw;
+        border: 1px solid black;
         position: relative;
-        left: 15%;
-        top: -10%;
+        left: 10vw;
+        top: 10vh;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+    .center > aside > tr > th, td{
+        width: 19.75vw;
+        border: 1px solid black;
+        background: #343434;
+        color: white;
+    }
+    .center > aside > tr > td{
+        background: #444;
+    }
+    .center > aside > tr:hover > td{
+        transform: scale(1.2);
+        background: #747474;
+    }
+    .center > aside > tr > td > a{
+        color: white;
+        text-decoration: none;
     }
     footer{
         width: 100vw;
