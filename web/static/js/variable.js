@@ -47,7 +47,7 @@ function sell(){
     number = document.querySelector("#number").value
     alert("sell " + number)
     // TODO: Modificar el json correspondiente para escribir el numero ingresado y pasarselo a Python
-    const route = '/${item}/fill/${number}'
+    const route = `/${item}/sell/${number}`
     window.open(route, "_self")//abre una ruta en la misma pestaña para iniciar la modificacion de la DB
 }
 
@@ -56,5 +56,6 @@ function fill(){
     number = document.querySelector("#number").value
     alert("fill " + number)
     // TODO: Modificar el json correspondiente para escribir el numero ingresado y pasarselo a Python
-    window.open('/' + item + '/fill', "_self")//abre una ruta en la misma pestaña para iniciar la modificacion de la DB
+    const route = `/${item}/fill/${number}`
+    window.open(route, "_self")//abre una ruta en la misma pestaña para iniciar la modificacion de la DB
 }

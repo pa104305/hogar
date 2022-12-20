@@ -37,6 +37,7 @@ def venta():
 
 @app.route('/<product_name>')
 def variable(product_name):
+    data_stock()
     charge_product(product_name)
     url_for('static', filename='css/variable.css')
     return render_template('html/variable.html')
@@ -47,9 +48,9 @@ def fill_route(product_name, filled):
     time.sleep(3)
     return redirect('/' + product_name)
 
-@app.route('/<product_name>/sell')
-def sell_route(product_name):
-    sell(product_name)
+@app.route('/<product_name>/sell/<selled>')
+def sell_route(product_name, selled):
+    sell(product_name, selled)
     time.sleep(3)
     return redirect('/' + product_name)
 
