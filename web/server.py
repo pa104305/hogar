@@ -6,7 +6,6 @@ from venta import *
 from info import *
 from variable import *
 import time
-#from info import products
 
 app = Flask(__name__)
 @app.route('/')

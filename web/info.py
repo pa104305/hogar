@@ -6,13 +6,13 @@ from statistics import mode
 # conectar con la base de datos mediante la ruta
 
 def data_db():
+    #conexion con la base de datos
     route = db.connect('db/data.sqlite3')
     try:
         # ?para que funciona .cursor()
         user_get = route.cursor()
         # *Seleccionar todo la informacion de la base de datos desde la tabla Users
         user = user_get.execute("SELECT * FROM Users").fetchall()
-        #print(user)
         # *Abrir el archivo json en el que se escribira la informacion
         document = open('static/json/user.json', 'w')
         # *Escribir los datos obtenidos desde la db para posteriormente usarlos en el front-end

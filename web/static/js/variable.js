@@ -38,24 +38,20 @@ function dom(productInfo){//modifica el documento html según la información de
 //? se establece un tiempo de espera para que JS pueda encontrar la información del producto seleccionado
 setTimeout(() => {
     charge()
-}, 500)
+}, 1000)
 
 // TODO: Agregar la funcion correspondiente a los botones, modificando la base de datos
 
 //? FUNCION PARA EL BOTON "VENDER"
 function sell(){
-    number = document.querySelector("#number").value
-    alert("sell " + number)
-    // TODO: Modificar el json correspondiente para escribir el numero ingresado y pasarselo a Python
-    const route = `/${item}/sell/${number}`
+    number = document.querySelector("#number").value//se extrae el valor numerico del input
+    const route = `/${item}/sell/${number}`//se genera la ruta para esta funcion
     window.open(route, "_self")//abre una ruta en la misma pestaña para iniciar la modificacion de la DB
 }
 
 //? FUNCION PARA EL BOTON "SURTIR"
 function fill(){
-    number = document.querySelector("#number").value
-    alert("fill " + number)
-    // TODO: Modificar el json correspondiente para escribir el numero ingresado y pasarselo a Python
-    const route = `/${item}/fill/${number}`
+    number = document.querySelector("#number").value//se extrae el valor numerico del input
+    const route = `/${item}/fill/${number}`//se genera la ruta para esta funcion
     window.open(route, "_self")//abre una ruta en la misma pestaña para iniciar la modificacion de la DB
 }
