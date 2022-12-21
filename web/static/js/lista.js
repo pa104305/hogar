@@ -1,13 +1,9 @@
 console.log("holaMundo!!!")
-//function add(){
-//    addProductName = document.querySelector("#addProductName").value
-//    quantityProductName = document.querySelector("#quantityProductName").value
-//}
-
+//funcion para comprobar el stock
 function comprobate_stock(){
     const len = stockVar.length
+    //se comprueba si el stock es igual a 0 se agrega a la tabla
     if(stockVar[2] === 0){
-        //alert(stockVar[1] + " sin stock")
         const table = document.createElement('tr');
         table.setAttribute("id", "line")
         table.innerHTML += `
@@ -19,7 +15,7 @@ function comprobate_stock(){
         space.appendChild(table)
     }
 }
-
+//genera la estructura base de la tabla
 const space = document.querySelector('#space')
 const table = document.createElement('tr');
 var stockVar =
@@ -31,8 +27,10 @@ table.innerHTML += `
 `;
 space.appendChild(table)
 
+//extrae la informacion del archivo json
 fetch('static/json/stock.json')
 .then(stock => stock.json())
+//itera sobre esta informacion, llamando a la funcion que comprueba el stock
 .then(stock => {
     stock.forEach(product => {
         stockVar = product
