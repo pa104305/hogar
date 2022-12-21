@@ -1,4 +1,3 @@
-//import info from json/info.json
 console.log("Prueba?") //comprobar si el archivo js esta conectado a html
 
 var intentos = 0;
@@ -6,50 +5,38 @@ var intentos = 0;
 function log(){//funcion a la que se llama desde html cuando se hace click en el boton Ingresar
     nombre = document.querySelector("#nombre").value //variable que guarda el valor introducido en el nombre de ususario
     contraseña = document.querySelector("#contraseña").value //variable que guarda el valor introducido en la contraseña
-    usuarios_db(nombre, contraseña);
-    //window.open('/principal', "_self"); //"_self" sirve para que la ventana se abra en la misma pestaña 
-    //abre la ventana home al dar click en ingresar, despues sera cuando el nombre y contraseña coincidan :p
-    //console.log("usuario : " + nombre);
-    //console.log("contraseña : " + contraseña);
-    //lineas para comprobar que los datos que solicitan las variables funcionan correctamente
+    usuarios_db(nombre, contraseña); //se llama a la funcion que obtiene la información de la base de datos
 }
 
-function comprobar_usuario(nombre, usuario_db){
-    if(nombre === usuario_db){
+function comprobar_usuario(datos, inputUser, inputPass){ //esta funcion se encarga de combrobar el usuario y contraseña
+    //ingresado con la información de la base de datos
+    if(datos[1] === inputUser && datos[2] === inputPass){ //compara el usuario y contraseña ingresado con la base de datos
         console.log("Usuario encontrado");
-        //Llamar funcion para comprobar contraseña
-    }else if(nombre != usuario_db){
-        console.log("Buscando usuario")
-    }else{
-        //alert("Credenciales incorrectas");
-        console.log("usuario no encontrado");
-    }
-}
-
-function comprobar_contraseña(contraseña, password_db){
-    if(contraseña === password_db){
         alert("Acceso concedido")
-        window.open('/principal', "_self");
-    }else if(contraseña != password_db){
-        console.log("intentando acceder")
-        intentos += 1;
-        if(intentos == 4){
-            alert("Acceso denegado")
-            location.reload()
-        }
+        window.open('/principal', "_self"); // se redirecciona al usuario a la pagina principla si este ingreso credenciales correctas
+    }else{
+        intentos += 1; //si se equivoca de credenciales suma una a la variable intentos
+    }
+    if(intentos == 4){ // si intentos es igual a 4 se le notifica al usuario que ingreso las credenciales incorrectas
+        console.log("usuario no encontrado" + intentos);
+        alert("Acceso denegado")
+        location.reload() //se recarga la pagina para que se borren los datos ingresados
     }
 }
 
-function usuarios_db(nombre, contraseña){
-    var info = 0
+function usuarios_db(nombre, contraseña){ //solicita la información a la base de datos para despues utilizarla
+    var info = 0 // variable para posteriormente guardar la informacion de la base de datos
     fetch('static/json/user.json')
     .then(respuesta => respuesta.json())
     .then(data => {
         data.forEach(date => {
             info = date
-            comprobar_usuario(nombre, date[1])
-            comprobar_contraseña(contraseña, date[2])
-            //console.log(info)
+            comprobar_usuario(date, nombre, contraseña) //llama a la funcion para comprobar credenciales con cada dato
+            //obtenido de la base de datos
         });
     })
+}
+
+function log_out(){ //funcion de cierre de sesion
+    window.open('/', "_self"); //se redirecciona al usuario a la pantalla de inicio para dar fin a la sesion
 }
