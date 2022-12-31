@@ -1,3 +1,10 @@
+:root{
+    --color1: #4e4d4a ;
+    --color2: #353432 ;
+    --color3: #8bc544 ;
+    --color4: #2790b0 ;
+    --color5: #2b4e72 ;
+}
 *{
     box-sizing: border-box;
     margin: 0;
@@ -7,18 +14,29 @@ html{
     scroll-behavior: smooth;
 }
 body{
-    background: #242424;
+    background: var(--color5);
 }
 footer > .container > button{
     position: absolute;
-    bottom: 7vh;
-    left: 46vw;
+    bottom: 5.5vh;
+    left: 48vw;
+    border: none;
+    background: var(--color4);
+    padding: 2.5px;
+    border-radius: 2.5px;
+}
+footer > .container > button:hover{
+    background: var(--color5);
+}
+footer > .container > button:focus{
+    background: var(--color5);
+    outline: none;
 }
 @media screen and (max-width: 850px){
     .header{
         width: 100%;
         height: 14vh;
-        background: grey;
+        background: var(--color1);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -62,9 +80,9 @@ footer > .container > button{
     .container{
         width: 100%;
         height: 10vh;
-        background: grey;
+        background: var(--color1);
         position: absolute;
-        bottom: 0%;
+        bottom: -10%;
     }
     .container > h3{
         text-align: center;
@@ -78,7 +96,7 @@ footer > .container > button{
         display: flex;
         width: 100vw;
         height: 10vh;
-        background: grey;
+        background: var(--color1);
     }
     .header > h1{
         width: 50vw;
@@ -100,7 +118,11 @@ footer > .container > button{
         text-decoration: none;
     }
     .header > nav > ul > a:hover{
-        background: #454545;
+        background: var(--color3);
+    }
+    .header > nav > ul > a:focus{
+        background: var(--color3);
+        outline: none;
     }
     .header > nav > ul > a > li {
         position: relative;
@@ -115,7 +137,7 @@ footer > .container > button{
         width: 50vw;
         display: flex;
         flex-direction: column;
-        color: #ccc;
+        color: #fff;
         align-items: center;
     }
     section > .info > h1{
@@ -143,7 +165,7 @@ footer > .container > button{
     footer{
         width: 100vw;
         height: 10vh;
-        background: grey;
+        background: var(--color1);
     }
     footer > .container{
         display: flex;
