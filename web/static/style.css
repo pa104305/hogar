@@ -1,8 +1,15 @@
+:root{
+    --color1: #4e4d4a ;
+    --color2: #353432 ;
+    --color3: #8bc544 ;
+    --color4: #2790b0 ;
+    --color5: #2b4e72 ;
+}
 *{
     box-sizing: border-box;
 }
 body{
-    background: #404040;
+    background: var(--color5);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -12,7 +19,7 @@ body{
 .cuadro{
     width: 350px;
     height: 400px;
-    background-color: white;
+    background-color: var(--color1);
     border-radius: 50px;
     display: flex;
     flex-direction: column;
@@ -28,20 +35,45 @@ body{
 }
 .cuadro > .campos > button{
     height: 30px;
-    background: darkgreen;
+    background: var(--color3);
     border-radius: 10px;
     margin-top: 30px;
-    border: 00.5px solid darkgreen;
+    border: none;
+    transition: all 2s;
+}
+.cuadro > .campos > button:focus{
+    outline: none;
+    background: var(--color3);
+    transform: scale(1.2);
+    transition: all 2s;
+    color: var(--color1);
 }
 .cuadro > .campos > button:hover{
-    height: 30px;
-    background: green;
-    border-radius: 10px;
+    background: var(--color3);
+    transform: scale(1.2);
+    transition: all 2s;
+    color: var(--color1);
 }
 .cuadro > .campos > input{
     margin-bottom: 25px;
     height: 25px;
     text-align: center;
+    border-radius: 5px;
+    border: none;
+    transition: all 1.5s;
+}
+.cuadro > .campos > input::placeholder{
+    transition: all 1.5s;
+}
+.cuadro > .campos > input:focus{
+    transform: scale(1.15);
+    transition: all 1s;
+    outline: none;
+}
+.cuadro > .campos > input:focus::placeholder{
+    transform: scale(1.1);
+    transition: all 1s;
+    color: transparent;
 }
 .campos > input, button{
     width: 200px;

@@ -1,4 +1,4 @@
-from crypt import methods
+#from crypt import methods
 from fileinput import filename
 from itertools import product
 from flask import Flask, jsonify, render_template, url_for
