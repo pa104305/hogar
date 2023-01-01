@@ -50,3 +50,12 @@ def sell(product, quantity):
     route.commit()
     #cerrar conexion con la base de datos
     route.close()
+
+# TODO: Agregar una funcion para cambiar el precio de los productos
+def change_price(product, new_price):
+    print("new price $" + new_price + " for " + product)
+    route = db.connect('db/data.sqlite3')
+    #route.execute("SELECT product_name, product_price FROM Products")
+    route.execute("UPDATE Products SET product_price='${}' WHERE product_name='{}';".format(new_price, product))
+    route.commit()
+    route.close()

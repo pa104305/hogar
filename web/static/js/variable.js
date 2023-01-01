@@ -40,8 +40,6 @@ setTimeout(() => {
     charge()
 }, 1000)
 
-// TODO: Agregar la funcion correspondiente a los botones, modificando la base de datos
-
 //? FUNCION PARA EL BOTON "VENDER"
 function sell(){
     number = document.querySelector("#number").value//se extrae el valor numerico del input
@@ -54,4 +52,11 @@ function fill(){
     number = document.querySelector("#number").value//se extrae el valor numerico del input
     const route = `/store/${item}/fill/${number}`//se genera la ruta para esta funcion
     window.open(route, "_self")//abre una ruta en la misma pestaña para iniciar la modificacion de la DB
+}
+
+//? FUNCION PARA EL BOTON CAMBIAR PRECIO
+function change_price(){
+    new_price = document.querySelector("#number").value
+    const route = `/store/${item}/changeprice/${new_price}`
+    window.open(route, "_self")
 }

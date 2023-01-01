@@ -53,5 +53,11 @@ def sell_route(product_name, selled):
     time.sleep(3)
     return redirect('/store/' + product_name)
 
+@app.route('/store/<product_name>/changeprice/<new_price>')
+def price(product_name, new_price):
+    change_price(product_name, new_price)
+    time.sleep(3)
+    return redirect('/store/' + product_name)
+
 if __name__ == '__main__':
     app.run('0.0.0.0', debug=True, port=8080)
