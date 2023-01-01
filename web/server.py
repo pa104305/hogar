@@ -34,24 +34,24 @@ def venta():
     url_for('static', filename='js/ventas.js')
     return render_template('html/productos.html')
 
-@app.route('/<product_name>')
+@app.route('/store/<product_name>')
 def variable(product_name):
     data_stock()
     charge_product(product_name)
     url_for('static', filename='css/variable.css')
     return render_template('html/variable.html')
 
-@app.route('/<product_name>/fill/<filled>')
+@app.route('/store/<product_name>/fill/<filled>')
 def fill_route(product_name, filled):
     fill(product_name, filled)
     time.sleep(3)
-    return redirect('/' + product_name)
+    return redirect('/store/' + product_name)
 
-@app.route('/<product_name>/sell/<selled>')
+@app.route('/store/<product_name>/sell/<selled>')
 def sell_route(product_name, selled):
     sell(product_name, selled)
     time.sleep(3)
-    return redirect('/' + product_name)
+    return redirect('/store/' + product_name)
 
 if __name__ == '__main__':
     app.run('0.0.0.0', debug=True, port=8080)

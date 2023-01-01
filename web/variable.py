@@ -3,12 +3,20 @@ import json
 from math import prod
 import sqlite3 as db
 from flask import redirect
+from datetime import datetime
 
 # Esta funcion escribe en un documento json el producto buscado para que después JS pueda buscar y cargar el mismo
 def charge_product(var):
-    document = open('static/json/variable.json', 'w')
-    json.dump(var, document)
-    document.close()
+    print(datetime.now())
+    print(var)
+    prod = {
+        "search" : var
+    }
+    with open('static/json/variable.json', 'w') as write_file:
+        json.dump(prod, write_file, indent=4)
+    #document = open('static/json/variable.json', 'w')
+    #json.dump(var, document)
+    #document.close()
 
 # Esta funcion es llamada cuando se abre la ruta /"producto"/fill/"cantidad" para iniciar las acciones indicadas
 def fill(product, quantity):

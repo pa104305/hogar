@@ -1,66 +1,62 @@
-<<<<<<< HEAD
-[[1, "lapiz", 0, "$3"], [2, "borrador", 0, "$4"], [3, "pluma", 25, "$6"], [4, "sacapuntas", 0, "$5"], [5, "marcador", 0, "$25"], [6, "carpeta", 0, "$5"], [7, "pintura", 1, "$13"], [8, "pincel", 0, "$4"], [9, "bicolor", 0, "$14"], [10, "colores", 0, "$26"]]
-=======
 [
-    [
-        1,
-        "lapiz",
-        18,
-        "$3"
-    ],
-    [
-        2,
-        "borrador",
-        0,
-        "$4"
-    ],
-    [
-        3,
-        "pluma",
-        5,
-        "$6"
-    ],
-    [
-        4,
-        "sacapuntas",
-        0,
-        "$5"
-    ],
-    [
-        5,
-        "marcador",
-        0,
-        "$25"
-    ],
-    [
-        6,
-        "carpeta",
-        0,
-        "$5"
-    ],
-    [
-        7,
-        "pintura",
-        0,
-        "$13"
-    ],
-    [
-        8,
-        "pincel",
-        0,
-        "$4"
-    ],
-    [
-        9,
-        "bicolor",
-        0,
-        "$14"
-    ],
-    [
-        10,
-        "colores",
-        0,
-        "$26"
-    ]
+    {
+        "id": 1,
+        "name": "lapiz",
+        "stock": 0,
+        "price": "$3"
+    },
+    {
+        "id": 2,
+        "name": "borrador",
+        "stock": 6,
+        "price": "$4"
+    },
+    {
+        "id": 3,
+        "name": "pluma",
+        "stock": 25,
+        "price": "$6"
+    },
+    {
+        "id": 4,
+        "name": "sacapuntas",
+        "stock": 0,
+        "price": "$5"
+    },
+    {
+        "id": 5,
+        "name": "marcador",
+        "stock": 0,
+        "price": "$25"
+    },
+    {
+        "id": 6,
+        "name": "carpeta",
+        "stock": 0,
+        "price": "$5"
+    },
+    {
+        "id": 7,
+        "name": "pintura",
+        "stock": 1,
+        "price": "$13"
+    },
+    {
+        "id": 8,
+        "name": "pincel",
+        "stock": 8,
+        "price": "$4"
+    },
+    {
+        "id": 9,
+        "name": "bicolor",
+        "stock": 0,
+        "price": "$14"
+    },
+    {
+        "id": 10,
+        "name": "colores",
+        "stock": 0,
+        "price": "$26"
+    }
 ]
->>>>>>> b662a73 (python now write in format json correctly)
