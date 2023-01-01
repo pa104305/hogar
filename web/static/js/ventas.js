@@ -9,6 +9,7 @@ function products(){
 
 // esta funcion busca un producto y modifica la tabla
 function productSearch(product){
+    if(product != undefined){
     // cuenta la cantidad de lineas
     var route = document.querySelectorAll('#line').length;
     // genera una constante de la longitud de productos
@@ -16,7 +17,7 @@ function productSearch(product){
     //inicia un bucle para llevar a la busqueda del producto buscado
     for(i = 0; i < len; i++){
         //variable que cambia su valor conforme se inicia un nuevo ciclo en el bucle
-        var position = stockVar[i][1]
+        var position = stockVar[i].name
         //compara el nombre del producto actual con el producto buscado
         if(position == product){
             //bucle que se encarga de remover las lineas de la tabla
@@ -28,15 +29,16 @@ function productSearch(product){
             const table = document.createElement('tr');
             table.setAttribute("id", "line")
             table.innerHTML += `
-                <th id="item-id">${stockVar[i][0]}</th>
-                <td id="item"><a href="/${stockVar[i][1]}"><div id="box">${stockVar[i][1]}</div></a></td>
-                <td id="item">${stockVar[i][2]}</td>
-                <td id="item">${stockVar[i][3]}</td>
+                <th id="item-id">${stockVar[i].id}</th>
+                <td id="item"><a href="/store/${stockVar[i].name}"><div id="box">${stockVar[i].name}</div></a></td>
+                <td id="item">${stockVar[i].stock}</td>
+                <td id="item">${stockVar[i].price}</td>
         `;
         //agrega esta informacion generada a la tabla
         space.appendChild(table)
         }
     }
+}
 }
 
 //selecciona el espacio donde se modificara la informacion
@@ -59,15 +61,15 @@ fetch('static/json/stock.json')
 .then(stock => stock.json())
 .then(stock => {
     stock.forEach(product => {
-        if(product[2] != 0){
+        if(product.stock != 0){
             const table = document.createElement('tr');
             stockVar = stock
             table.setAttribute("id", "line")
             table.innerHTML += `
-                <th id="item-id">${product[0]}</th>
-                <td id="item"><a href="/${product[1]}"><div id="box">${product[1]}</div></a></td>
-                <td id="item">${product[2]}</td>
-                <td id="item">${product[3]}</td>
+                <th id="item-id">${product.id}</th>
+                <td id="item"><a href="/store/${product.name}"><div id="box">${product.name}</div></a></td>
+                <td id="item">${product.stock}</td>
+                <td id="item">${product.price}</td>
             `;
             space.appendChild(table)
         }
