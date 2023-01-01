@@ -9,14 +9,20 @@ def data_db():
     #conexion con la base de datos
     route = db.connect('db/data.sqlite3')
     try:
-        # ?para que funciona .cursor()
-        user_get = route.cursor()
         # *Seleccionar todo la informacion de la base de datos desde la tabla Users
-        user = user_get.execute("SELECT * FROM Users").fetchall()
+        users = route.execute("SELECT * FROM Users").fetchall()
+        info_json = []
+        for user in users:
+            data = {
+                "id" : user[0],
+                "user" : user[1],
+                "password" : user[2]
+            }
+            info_json.append(data)
         # *Abrir el archivo json en el que se escribira la informacion
         document = open('static/json/user.json', 'w')
         # *Escribir los datos obtenidos desde la db para posteriormente usarlos en el front-end
-        json.dump(user, document)
+        json.dump(info_json, document, indent=4)
         # *Cerrar el documento para que se escriba la información
         document.close()
         print("Datos obtenidos")
@@ -24,3 +30,4 @@ def data_db():
     except db.OperationalError:
         print("ptm otro error")
 
+data_db()

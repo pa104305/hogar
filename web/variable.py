@@ -3,12 +3,20 @@ import json
 from math import prod
 import sqlite3 as db
 from flask import redirect
+from datetime import datetime
 
 # Esta funcion escribe en un documento json el producto buscado para que después JS pueda buscar y cargar el mismo
 def charge_product(var):
-    document = open('static/json/variable.json', 'w')
-    json.dump(var, document)
-    document.close()
+    print(datetime.now())
+    print(var)
+    prod = {
+        "search" : var
+    }
+    with open('static/json/variable.json', 'w') as write_file:
+        json.dump(prod, write_file, indent=4)
+    #document = open('static/json/variable.json', 'w')
+    #json.dump(var, document)
+    #document.close()
 
 # Esta funcion es llamada cuando se abre la ruta /"producto"/fill/"cantidad" para iniciar las acciones indicadas
 def fill(product, quantity):
@@ -41,4 +49,13 @@ def sell(product, quantity):
     #actualizat la db
     route.commit()
     #cerrar conexion con la base de datos
+    route.close()
+
+# TODO: Agregar una funcion para cambiar el precio de los productos
+def change_price(product, new_price):
+    print("new price $" + new_price + " for " + product)
+    route = db.connect('db/data.sqlite3')
+    #route.execute("SELECT product_name, product_price FROM Products")
+    route.execute("UPDATE Products SET product_price='${}' WHERE product_name='{}';".format(new_price, product))
+    route.commit()
     route.close()

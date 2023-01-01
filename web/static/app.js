@@ -10,16 +10,16 @@ function log(){//funcion a la que se llama desde html cuando se hace click en el
 
 function comprobar_usuario(datos, inputUser, inputPass){ //esta funcion se encarga de combrobar el usuario y contraseña
     //ingresado con la información de la base de datos
-    if(datos[1] === inputUser && datos[2] === inputPass){ //compara el usuario y contraseña ingresado con la base de datos
+    if(datos.user === inputUser && datos.password === inputPass){ //compara el usuario y contraseña ingresado con la base de datos
         console.log("Usuario encontrado");
-        alert("Acceso concedido")
+        //alert("Acceso concedido")
         window.open('/principal', "_self"); // se redirecciona al usuario a la pagina principla si este ingreso credenciales correctas
     }else{
         intentos += 1; //si se equivoca de credenciales suma una a la variable intentos
     }
     if(intentos == 4){ // si intentos es igual a 4 se le notifica al usuario que ingreso las credenciales incorrectas
         console.log("usuario no encontrado" + intentos);
-        alert("Acceso denegado")
+        //alert("Acceso denegado")
         location.reload() //se recarga la pagina para que se borren los datos ingresados
     }
 }
@@ -31,8 +31,7 @@ function usuarios_db(nombre, contraseña){ //solicita la información a la base 
     .then(data => {
         data.forEach(date => {
             info = date
-            comprobar_usuario(date, nombre, contraseña) //llama a la funcion para comprobar credenciales con cada dato
-            //obtenido de la base de datos
+            comprobar_usuario(date, nombre, contraseña)
         });
     })
 }
