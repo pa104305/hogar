@@ -62,7 +62,7 @@
     {
         "id": 11,
         "name": "silicon",
-        "stock": 100,
+        "stock": 30,
         "price": "$3"
     }
 ]
