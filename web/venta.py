@@ -32,4 +32,9 @@ def data_stock():
     finally:
         print("Programa finalizado")
 
-data_stock()
+def create_product(name_new_product):
+    route = db.connect('db/data.sqlite3')
+    id = len(route.execute("SELECT product_id FROM Products").fetchall()) + 1
+    route.execute("INSERT INTO Products VALUES ({}, '{}', 0, '$0')".format(id, name_new_product))
+    route.commit()
+    route.close()
