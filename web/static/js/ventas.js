@@ -75,3 +75,9 @@ fetch('static/json/stock.json')
         }
     })
 })
+
+function create_product(){
+    var productName = document.querySelector("#productName").value
+    const new_route = `/store/new/${productName}`
+    window.open(new_route, "_self")
+}

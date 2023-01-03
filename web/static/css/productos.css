@@ -214,6 +214,8 @@ footer > .container > button:focus{
         cursor: pointer;
         padding: 2.5px;
         border: none;
+        margin-left: 10px;
+        transition: all 0.5s;
     }
     section > article > button:focus{
         transform: scale(1.1);

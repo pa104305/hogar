@@ -59,5 +59,11 @@ def price(product_name, new_price):
     time.sleep(3)
     return redirect('/store/' + product_name)
 
+@app.route('/store/new/<new_product>')
+def create(new_product):
+    create_product(new_product)
+    time.sleep(3)
+    return redirect('/store/' + new_product)
+
 if __name__ == '__main__':
     app.run('0.0.0.0', debug=True, port=8080)

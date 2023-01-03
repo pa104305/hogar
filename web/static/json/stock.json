@@ -58,5 +58,11 @@
         "name": "colores",
         "stock": 3,
         "price": "$26"
+    },
+    {
+        "id": 11,
+        "name": "silicon",
+        "stock": 100,
+        "price": "$3"
     }
 ]
