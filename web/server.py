@@ -65,5 +65,28 @@ def create(new_product):
     time.sleep(3)
     return redirect('/store/' + new_product)
 
+@app.route('/users')
+def users():
+    # ! Cambiar la redireccion a la pagina para los usuarios al diseñar esta pagina
+    return redirect('/principal')
+
+@app.route('/users/createuser/<user_name>/<password>')
+def create_user(user_name, password):
+    create_user_db(user_name, password)
+    time.sleep(3)
+    return redirect('/users')
+
+@app.route('/users/modify/username/<change_user>/<id>')
+def modify_username(change_user, id):
+    # ! Funcion para modificar el nombre de usuario correspondiente
+    time.sleep(3)
+    return redirect('/users')
+
+@app.route('/users/modify/password/<change_password>/<id>')
+def modify_password(change_password, id):
+    # ! Funcion para cambiar la contraseña del usuario
+    time.sleep(3)
+    return redirect('/users')
+
 if __name__ == '__main__':
     app.run('0.0.0.0', debug=True, port=8080)

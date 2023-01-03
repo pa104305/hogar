@@ -64,5 +64,11 @@
         "name": "silicon",
         "stock": 30,
         "price": "$3"
+    },
+    {
+        "id": 12,
+        "name": "silicon_liquido",
+        "stock": 4,
+        "price": "$16"
     }
 ]

@@ -30,4 +30,21 @@ def data_db():
     except db.OperationalError:
         print("ptm otro error")
 
-data_db()
+def create_user_db(username, password):
+    route = db.connect('db/data.sqlite3')
+    try:
+        id = len(route.execute("SELECT id FROM Users").fetchall()) + 1
+        route.execute("INSERT INTO Users VALUES ({}, '{}', '{}')".format(id, username, password))
+        route.commit()
+        route.close()
+    except db.OperationalError:
+        print('PTM un error')
+
+def modify_password_db(new_password, id):
+    route = db.connect('db/data.sqlite3')
+    try:
+        route.execute("UPDATE Users SET user_password='{}' WHERE id={}".format(new_password, id))
+        route.commit()
+        route.close()
+    except db.OperationalError:
+        print('PTM un error')
