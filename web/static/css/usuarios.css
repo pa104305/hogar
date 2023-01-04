@@ -1,0 +1,201 @@
+:root{
+    --color1: #4e4d4a ;
+    --color2: #353432 ;
+    --color3: #8bc544 ;
+    --color4: #2790b0 ;
+    --color5: #2b4e72 ;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background: var(--color5);
+}
+footer > .container > button{
+    position: absolute;
+    bottom: 5.5vh;
+    left: 48vw;
+    border: none;
+    background: var(--color4);
+    padding: 2.5px;
+    border-radius: 2.5px;
+}
+footer > .container > button:hover{
+    background: var(--color5);
+}
+footer > .container > button:focus{
+    background: var(--color5);
+    outline: none;
+}
+.header{
+    display: flex;
+    width: 100vw;
+    height: 10vh;
+    background: var(--color1);
+}
+.header > h1{
+    width: 50vw;
+    margin-left: 5vw;
+    position: relative;
+}
+.header > nav > ul{
+    list-style: none;
+    width: 45vw;
+    display: flex;
+    justify-items: right;
+}
+.header > nav > ul > a{
+    width: 18vw;
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+}
+.header > nav > ul > a:hover{
+    background: var(--color3);
+}
+.header > nav > ul > a:focus{
+    background: var(--color3);
+    outline: none;
+}
+.header > nav > ul > a > li {
+    position: relative;
+    top: 4vh;
+    color: white;
+}
+section{
+    height: 80vh;
+    display: flex;
+}
+section > .new{
+    width: 45vw;
+    height: 80vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(24, 1fr);
+    border-right: 1px solid black;
+    margin-left: 5vw;
+}
+section > .new > h2{
+    grid-column: 1 / 4;
+    grid-row: 3 / 4;
+    text-align: center;
+    text-shadow: 1.5px 1.5px 2px white;
+}
+.inputs{
+    border: none;
+    text-align: center;
+    border-radius: 9px;
+    transition: all 0.75s;
+    outline: none;
+}
+.inputs::placeholder{
+    transition: all 1.25s;
+}
+.inputs:focus{
+    transform: scale(1.175);
+    transition: all 0.75s;
+}
+.inputs:focus::placeholder{
+    color: transparent;
+    transition: all 1s;
+    transform: scale(1.15);
+}
+section > .new > #one{
+    grid-column: 2 / 3;
+    grid-row: 6 / 7;
+}
+section > .new > #two{
+    grid-column: 2 / 3;
+    grid-row: 8 / 9;
+}
+section > .new > button{
+    grid-column: 2 / 3;
+    grid-row: 11 / 12;
+}
+.buttons{
+    border: none;
+    border-radius: 9px;
+    background: var(--color3);
+    transition: all 0.75s;
+    outline: none;
+}
+.buttons:focus{
+    transform: scale(1.2);
+    transition: all 0.75s;
+}
+.buttons:hover{
+    transform: scale(1.2);
+    transition: 0.75s all;
+}
+section > .change > #change_user{
+    width: 50vw;
+    height: 40vh;
+}
+section > .change > #change_user{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+}
+section > .change > #change_user > h3{
+    grid-column: 2/3;
+    grid-row: 2/4;
+    text-align: center;
+    text-shadow: 1.5px 1.5px 2px white;
+}
+section > .change > #change_user > input{
+    grid-column: 2/3;
+    grid-row: 5/6;
+}
+section > .change > #change_user > button{
+    grid-column: 2/3;
+    grid-row: 8/9;
+}
+section > .change > #change_password{
+    width: 50vw;
+    height: 40vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    border-top: 1px solid black;
+}
+section > .change > #change_password > h3{
+    grid-column: 2/3;
+    grid-row: 2/4;
+    text-align: center;
+    text-shadow: 1.5px 1.5px 2px white;
+}
+section > .change > #change_password > #one{
+    grid-column: 2/3;
+    grid-row: 5/6;
+}
+section > .change > #change_password > #two{
+    grid-column: 2/3;
+    grid-row: 7/8;
+}
+section > .change > #change_password > button{
+    grid-column: 2/3;
+    grid-row: 10/11;
+}
+footer{
+    width: 100vw;
+    height: 10vh;
+    background: var(--color1);
+}
+footer > .container{
+    display: flex;
+    height: 9vh;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+footer > .container > h3{
+    width: 25vw;
+    font-size: 18px;
+    text-align: center;
+}

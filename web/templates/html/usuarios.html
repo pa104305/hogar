@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link rel="stylesheet" href="/static/css/usuarios.css">-->
+    <link rel="stylesheet" href="../../static/css/usuarios.css">
+    <title>Copias PIT</title>
+</head>
+<body>
+    <header class="header">
+        <h1>Copias PIT</h1>
+        <nav>
+            <ul>
+                <a href="/principal"><li>Principal</li></a>
+                <a href="/venta"><li>Ventas</li></a>
+                <a href="/compras"><li>Compras</li></a>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <div class="new">
+            <h2>Crear Usuario</h2>
+            <input type="text" placeholder="Nombre de usuario" id="one" class="inputs">
+            <input type="password" placeholder="Contraseña" id="two" class="inputs">
+            <button class="buttons">Crear</button>
+        </div>
+        <div class="change">
+            <div id="change_user">
+                <h3>Cambiar nombre de usuario</h3>
+                <input type="text" placeholder="Nuevo nombre de usuario" class="inputs">
+                <button class="buttons">Cambiar</button>
+            </div>
+            <div id="change_password">
+                <h3>Cambiar contraseña</h3>
+                <input type="password" placeholder="Contraseña antigua" id="one" class="inputs">
+                <input type="password" placeholder="Nueva contraseña" id="two" class="inputs">
+                <button class="buttons">Cambiar</button>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <button onclick="log_out()">Log Out</button>
+            <h3>&copy;  Derechos Reservados</h3>
+        </div>
+    </footer>
+</body>
+    <!--<script></script>-->
+    <script src="../../static/app.js"></script>
+</html>
