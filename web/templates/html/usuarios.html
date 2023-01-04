@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--<link rel="stylesheet" href="/static/css/usuarios.css">-->
-    <link rel="stylesheet" href="../../static/css/usuarios.css">
+    <link rel="stylesheet" href="/static/css/usuarios.css">
+    <!--<link rel="stylesheet" href="../../static/css/usuarios.css">-->
     <title>Copias PIT</title>
 </head>
 <body>
@@ -22,21 +22,21 @@
     <section>
         <div class="new">
             <h2>Crear Usuario</h2>
-            <input type="text" placeholder="Nombre de usuario" id="one" class="inputs">
-            <input type="password" placeholder="Contraseña" id="two" class="inputs">
-            <button class="buttons">Crear</button>
+            <input type="text" placeholder="Nombre de usuario" id="one" class="inputs new_username">
+            <input type="password" placeholder="Contraseña" id="two" class="inputs new_password">
+            <button class="buttons" onclick="create_user()">Crear</button>
         </div>
         <div class="change">
             <div id="change_user">
                 <h3>Cambiar nombre de usuario</h3>
-                <input type="text" placeholder="Nuevo nombre de usuario" class="inputs">
-                <button class="buttons">Cambiar</button>
+                <input type="text" placeholder="Nuevo nombre de usuario" class="inputs" id="username">
+                <button class="buttons" onclick="modify_username()">Cambiar</button>
             </div>
             <div id="change_password">
                 <h3>Cambiar contraseña</h3>
-                <input type="password" placeholder="Contraseña antigua" id="one" class="inputs">
-                <input type="password" placeholder="Nueva contraseña" id="two" class="inputs">
-                <button class="buttons">Cambiar</button>
+                <input type="password" placeholder="Contraseña antigua" id="old_password" class="inputs one">
+                <input type="password" placeholder="Nueva contraseña" id="new_password" class="inputs two">
+                <button class="buttons" onclick="modify_password()">Cambiar</button>
             </div>
         </div>
     </section>
@@ -48,5 +48,5 @@
     </footer>
 </body>
     <!--<script></script>-->
-    <script src="../../static/app.js"></script>
+    <script src="static/app.js"></script>
 </html>

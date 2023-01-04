@@ -40,10 +40,19 @@ def create_user_db(username, password):
     except db.OperationalError:
         print('PTM un error')
 
+def modify_username_db(new_username, id):
+    route = db.connect('db/data.sqlite3')
+    try:
+        route.execute("UPDATE Users SET user_name='{}' WHERE id={}".format(new_username, int(id)))
+        route.commit()
+        route.close()
+    except db.OperationalError:
+        print("PTM un error")
+
 def modify_password_db(new_password, id):
     route = db.connect('db/data.sqlite3')
     try:
-        route.execute("UPDATE Users SET user_password='{}' WHERE id={}".format(new_password, id))
+        route.execute("UPDATE Users SET user_password='{}' WHERE id={}".format(new_password, int(id)))
         route.commit()
         route.close()
     except db.OperationalError:
