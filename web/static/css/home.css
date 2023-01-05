@@ -33,6 +33,9 @@ footer > .container > button:focus{
     outline: none;
 }
 @media screen and (max-width: 850px){
+    #big{
+        display: none;
+    }
     .header{
         width: 100%;
         height: 14vh;
@@ -127,6 +130,28 @@ footer > .container > button:focus{
     .header > nav > ul > a > li {
         position: relative;
         top: 4vh;
+    }
+    #big{
+        display: flex;
+        align-items: center;
+    }
+    #big > a{
+        margin-left: 1.8vw;
+    }
+    #big > a > button{
+        border: none;
+        padding: 3px;
+        border-radius: 3px;
+        background: var(--color4);
+        transition: all 0.75s;
+    }
+    #big > a > button:hover{
+        transform: scale(1.175);
+        transition: all 0.75s;
+    }
+    #big > a > button:focus{
+        transform: scale(1.175);
+        transition: all 0.75s;
     }
     section{
         width: 100vw;
