@@ -18,6 +18,7 @@ def saludo(name=None):
 @app.route('/principal')
 def inicio():
     url_for('static', filename='css/home.css')
+    url_for('static', filename='img/croquis.png')
     return render_template('html/home.html')
 
 @app.route('/compras')
