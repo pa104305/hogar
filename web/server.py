@@ -1,7 +1,9 @@
 #from crypt import methods
 from fileinput import filename
+from http import cookies
 from itertools import product
-from flask import Flask, jsonify, render_template, url_for
+from urllib import request, response
+from flask import Flask, jsonify, render_template, url_for, make_response
 from venta import *
 from info import *
 from variable import *
@@ -9,11 +11,26 @@ import time
 
 app = Flask(__name__)
 @app.route('/')
-def saludo(name=None):
+def saludo():
     data_db()
     url_for('static', filename='style.css')
     url_for('static', filename='app.js')
     return render_template('index.html')
+
+@app.route('/err')
+def err():
+    return render_template('index.html', err=True)
+
+@app.route('/<user_name>/<password>')
+def auth(user_name, password):
+    bool = auth_user(user_name, password)
+    if bool[0] == True:
+        resp = make_response(redirect('/principal'))
+        resp.set_cookie('log', 'True')
+        resp.set_cookie('id', '{}'.format(bool[1]))
+        return resp
+    else:
+        return redirect('/err')
 
 @app.route('/principal')
 def inicio():
@@ -68,7 +85,6 @@ def create(new_product):
 
 @app.route('/users')
 def users():
-    # ! Cambiar la redireccion a la pagina para los usuarios al diseñar esta pagina
     data_db()
     return render_template('html/usuarios.html')
 

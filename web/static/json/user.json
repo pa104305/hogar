@@ -1,27 +1,7 @@
 [
-    {
-        "id": 1,
-        "user": "Pedro",
-        "password": "pedro123"
-    },
-    {
-        "id": 2,
-        "user": "Mariana",
-        "password": "mariana123"
-    },
-    {
-        "id": 3,
-        "user": "Liliana",
-        "password": "liliana123"
-    },
-    {
-        "id": 4,
-        "user": "Ale",
-        "password": "ale123"
-    },
-    {
-        "id": 5,
-        "user": "Jime",
-        "password": "jime123"
-    }
+    [
+        4,
+        "Ale",
+        "ale1004"
+    ]
 ]
