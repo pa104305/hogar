@@ -21,4 +21,11 @@
     </div>
 </body>
 <script src="static/app.js"></script>
+<script src="static/bibliotecas/node_modules/crypto-js/crypto-js.js"></script>
+{% if err %}
+<script>
+    alert("Error al iniciar sesion");
+    window.open('/', "_self")
+</script>
+{% endif %}
 </html>

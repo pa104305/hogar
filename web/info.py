@@ -2,7 +2,9 @@ import sqlite3 as db
 # *Importamos la libreria para conectar con sqlite3 como db
 import json
 # *Importar la libreria para leer y escribir json
+from flask import redirect, make_response
 from statistics import mode
+import hashlib
 # conectar con la base de datos mediante la ruta
 
 def data_db():
@@ -29,6 +31,30 @@ def data_db():
     # !Lanzar una frase en caso de que haya un error de operacion con la base de datos
     except db.OperationalError:
         print("ptm otro error")
+
+def auth_user(user_name, password):
+    route = db.connect('db/data.sqlite3')
+    try:
+        user_name_DB = route.execute("SELECT * FROM Users WHERE user_name='{}'".format(user_name)).fetchall()
+        document = open('static/json/user.json', "w")
+        json.dump(user_name_DB, document, indent=4)
+        document.close()
+    except db.OperationalError:
+        print("ptm un error")
+    if(len(user_name_DB) == 1):
+        password_DB = user_name_DB[0][2]
+        username_DB = user_name_DB[0][1]
+    else:
+        password_DB = "0"
+        username_DB = "0"
+    hash = hashlib.sha256(password_DB.encode()).hexdigest()
+    if user_name == username_DB and password == hash:
+        dates = [True, user_name_DB[0][0]]
+        return dates
+    else:
+        dates = [False, 0]
+        return dates
+
 
 def create_user_db(username, password):
     route = db.connect('db/data.sqlite3')
