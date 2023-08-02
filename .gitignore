@@ -1,0 +1,5 @@
+web/db/data.sqlite3
+web/db/data.sqbpro
+web/db/products.sqlite
+web/db/users.sqbpro
+web/static/json/
